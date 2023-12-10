@@ -19,7 +19,8 @@ from django.urls import path
 from HydroConnect import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.welcome, name='welcome'),
+    path('index/', views.index, name='index'),
     path('register/', views.register, name='register'),
     path('login/', views.user_login, name='login'),
 ]

@@ -10,13 +10,16 @@ from django.contrib import messages
 def index(request):
     return render(request, 'index.html')
 
+def welcome(request):
+    return render(request, 'welcome.html')
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             print("Form submitted")  
-            return redirect('login')  # Redirect to login page
+            return redirect('login')  
         else:
             print("Form is not valid")  
             print(form.errors)
@@ -33,6 +36,6 @@ def user_login(request):
             login(request, user)
             return redirect('index')
     else:
-        form = AuthenticationForm(request, initial={'username': ''})  # Set initial username field value to empty string
+        form = AuthenticationForm(request, initial={'username': ''})  
 
     return render(request, 'login.html', {'form': form})

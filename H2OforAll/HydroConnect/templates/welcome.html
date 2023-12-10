@@ -18,11 +18,140 @@
 
     <!-- css file link  -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
 
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            text-align: center; 
+        }
+
+        .abinibi {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0; 
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            margin: auto; 
+            padding: 20px; 
+        }
+
+        #logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: lightblue;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        #logo img {
+            width: 30px; 
+            margin-right: 10px; 
+        }
+
+        #image {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        #tagline {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        hr {
+            width: 80%;
+            margin: 20px auto;
+            border-color: #ccc;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            padding: 8px;
+            width: 270px;
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-bottom: 60px;
+            border-radius: 5px;
+            background: rgba(0, 0, 225, 0.8);
+            border: 1px solid rgba(0, 0, 225, 0.8);
+        }
+
+        button:hover {
+            background: #fff;
+            color: rgba(0, 0, 225, 0.8);
+        }
+
+        .button2 {
+            color: rgba(0, 0, 225, 0.8);
+            background: #fff;
+            border: 1px solid rgba(0, 0, 225, 0.8);
+        }
+
+        .button2:hover {
+            background: rgba(0, 0, 225, 0.8);
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            button{
+                margin-bottom: 0;
+            }
+            .button2 {
+                margin-top: 30px;
+                margin-bottom: 60px;
+            }
+            #tagline {
+                margin-top: 20px;
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
 <body>
 
-    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-</body>
+    <section class="abinibi">
+        <div class="container">
+            <div id="logo">
+                <img src="{% static 'images/logo.png' %}" alt="HydroConnect Logo">
+                HydroConnect
+            </div>
+            <img id="image" src="{% static 'images/10.jpg' %}" alt="HydroConnect Image">
+            <div id="tagline">
+                HydroConnect: Uniting Communities, Securing Water Futures in the DRC.
+            </div>
+            <hr>
+            <a href="{% url 'register' %}">
+                <button>Sign Up</button>
+            </a>
+            <a href="{% url 'login' %}">
+                <button class="button2">Login</button>
+            </a>
+        </div>
+    </section>
 
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</body>
 </html>
