@@ -24,7 +24,7 @@
     />
 
     <!-- Custom CSS file link -->
-    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
     <style>
       /* Reset some default styles for better consistency */
@@ -71,7 +71,7 @@
       }
 
       .hero {
-        background: url("/H2OforAll/HydroConnect/static/images/10.jpg");
+        background: url("{% static 'images/10.jpg' %}");
         background-color: #ecf0f1;
         text-align: center;
         padding: 40px;
@@ -323,7 +323,7 @@
   <body>
     <header>
       <img
-        src="/H2OforAll/HydroConnect/static/images/logo (2).png"
+        src="{% static 'images/logo (2).png' %}"
         alt="HydroConnect Logo"
       />
       <h1>HydroConnect</h1>
@@ -425,40 +425,25 @@
             Learn about the fundamental aspects of water quality and its
             importance for community health.
           </p>
-          <a
-            href="/H2OforAll/HydroConnect/static/documents/water2.pdf"
-            class="download-button"
-            download
-            >Download</a
-          >
+          <a href="{% static 'documents/water2.pdf' %}" class="download-button" download>Download</a>
         </div>
-
+      
         <div class="engagement-block">
           <h3>Community Initiatives</h3>
           <p>
             Explore initiatives and community-driven projects aimed at improving
             water quality in your area.
           </p>
-          <a
-            href="/H2OforAll/HydroConnect/static/documents/water2.pdf"
-            class="download-button"
-            download
-            >Download</a
-          >
+          <a href="{% static 'documents/water2.pdf' %}" class="download-button" download>Download</a>
         </div>
-
+      
         <div class="engagement-block">
           <h3>Environmental Impact</h3>
           <p>
             Understand the environmental impact of water pollution and ways to
             minimize our ecological footprint.
           </p>
-          <a
-            href="/H2OforAll/HydroConnect/static/documents/Water1.pdf"
-            class="download-button"
-            download
-            >Download</a
-          >
+          <a href="{% static 'documents/Water1.pdf' %}" class="download-button" download>Download</a>
         </div>
       </section>
     </section>
