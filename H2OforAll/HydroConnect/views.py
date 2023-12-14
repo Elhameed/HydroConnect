@@ -39,3 +39,10 @@ def user_login(request):
         form = AuthenticationForm(request, initial={'username': ''})  
 
     return render(request, 'login.html', {'form': form})
+
+
+@login_required
+def index(request):
+    username = request.user.username
+    return render(request, 'index.html', {'username': username})
+
