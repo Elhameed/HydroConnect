@@ -41,8 +41,8 @@ def user_login(request):
     return render(request, 'login.html', {'form': form})
 
 
-# @login_required
-# def index(request):
-#     username = request.user.username
-#     return render(request, 'your_template.html', {'username': username})
+@login_required
+def index(request):
+    username = request.user.username
+    return render(request, 'index.html', {'username': username})
 
